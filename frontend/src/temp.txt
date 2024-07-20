@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archipelago Zoo</title>
+    <link rel="stylesheet" href="../css/style_main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../foto/logo.png" alt="Archipelago Zoo">
+            <span>Archipelago Zoo</span>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>DISCOVER THE WILD</h1>
+                <p>Unveil the wonders of nature and encounter wildlife from around the globe at our zoo.</p>
+            </div>
+        </section>
+
+        <!-- Card -->
+        <section class="info">
+            <h2>A Place to Learn & Enjoy Nature</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="../foto/Feed the animal.png" alt="Feed The Animals">
+                    <h3>Feed The Animals</h3>
+                    <p>Animal feeding allows visitors to interact directly with the animals, providing an educational and fun experience about their natural feeding habits and behaviors.</p>
+                </div>
+                <div class="card">
+                    <img src="../foto/Zoo tour.png" alt="Zoo Tour">
+                    <h3>Zoo Tour</h3>
+                    <p>The zoo gives visitors the opportunity to see various animals up close in an environment that resembles their natural habitat, while enjoying informative explanations from our professional tour guide.</p>
+                </div>
+                <div class="card">
+                    <img src="../foto/Animal show.png" alt="Animal Show">
+                    <h3>Animal Show</h3>
+                    <p>Animal shows feature trained animals performing a variety of exciting stunts, while educating visitors about natural behavior and the importance of conservation.</p>
+                </div>
+            </div>
+            <h2>Various Animal Species</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="../foto/Birds.png" alt="Birds">
+                    <h3>Birds</h3>
+                    <p>The zoo's birdlife area showcases a variety of exotic bird species in stunning colors, providing insight into their habits and habitats.</p>
+                </div>
+                <div class="card">
+                    <img src="../foto/Sea Aquarium.png" alt="Sea Aquarium">
+                    <h3>Sea Aquarium</h3>
+                    <p>The sea animal aquarium showcases a variety of underwater life, offering a spectacular and educational view of the marine ecosystem and the importance of preserving its habitat.</p>
+                </div>
+                <div class="card">
+                    <img src="../foto/Reptile.png" alt="Reptile">
+                    <h3>Reptile</h3>
+                    <p>The reptile animal zone features a variety of exotic reptile species, providing an insight into their habits, habitats and the importance of protecting these unique animals.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+     <footer>
+        <div class="footer-content">
+            <div class="footer-section address">
+                <h3>Address</h3>
+                <p>Jl. Meranti No. 14 Kalasey, Papua Barat, Indonesia</p>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>archipelagoZoo@gmail.com</p>
+                <p>+6287777777777</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Animals</a></li>
+                    <li><a href="#">Eat & Drink</a></li>
+                    <li><a href="#">Zoo Information</a></li>
+                </ul>
+            </div>
+            <div class="footer-section hours">
+                <h3>Operational Hours</h3>
+                <p>We're open every day of the year.</p>
+                <p>Opening Time: <span class="highlight">09:00 am</span></p>
+                <p>Closing Time: <span class="highlight">05:00 pm</span></p>
+                <p>Last Entry: <span class="highlight">04:00 pm</span></p>
+                <p>Ticketing: 09:00 am - 4:30 pm</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Archipelago Zoo. All rights reserved.</p>
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">TikTok</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
