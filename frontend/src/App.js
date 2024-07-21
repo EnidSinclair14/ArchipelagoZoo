@@ -1,18 +1,17 @@
 import './App.css';
-import './styles/lexend.css'; // Lexend Font Family
-import './styles/poppins.css'; // Poppins Font Family
+import './styles/font/lexend.css'; // Lexend Font Family
+import './styles/font/poppins.css'; // Poppins Font Family
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Pages
 import HomePage from './pages/Home/HomePage';
-// import AboutPage from './pages/AboutPage';
-// import NotFoundPage from './pages/NotFoundPage';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   return (
     <Router>
       {/* <Header /> */}
-      {/* <div> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         {/* <Route path="/about" element={<AboutPage />} /> */}
