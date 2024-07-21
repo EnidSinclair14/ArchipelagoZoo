@@ -7,7 +7,11 @@ module.exports = {
       primary: '#EAEAEA',
       page_background: '#959595',
       white: '#fff',
-      red: 'red',
+      black: '#000',
+      red: '#d43535',
+      green: '#2ed17a', 
+      blue: '#2ebed1',
+      
     },
     extend: {},
   },

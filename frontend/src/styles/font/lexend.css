@@ -8,6 +8,20 @@
   font-style: normal;
 }
 
+.lexend-medium {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.lexend-semi-bold {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .lexend-bold {
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
