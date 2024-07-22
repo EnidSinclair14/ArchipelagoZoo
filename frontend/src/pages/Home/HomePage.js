@@ -7,12 +7,11 @@ import '../../styles/font/lexend.css' // font family
 const HomePage = () => {
   return (
     <div className='w-full bg-primary overflow-x-hidden'>
-
-      <main className='bg-primary pr-20'>
+      <main className='pr-20'>
         <HeaderLogo />
         <section class="hero lexend-bold">
           <div class="overlay"></div>
-          <div class="hero-content">
+          <div class="hero-content lexend-bold">
             <h1>DISCOVER THE WILD</h1>
             <p>Unveil the wonders of nature and encounter wildlife from around the globe at our zoo.</p>
           </div>

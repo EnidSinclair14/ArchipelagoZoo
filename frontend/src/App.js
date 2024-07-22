@@ -9,6 +9,7 @@ import HomePage from './pages/Home/HomePage'; // Home page
 import Login from './pages/Auth/Login'; // Login page
 import Register from './pages/Auth/Register';
 import ForgotPassword from './pages/Auth/ForgotPassword';
+import Events from './pages/Events/Events';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot_password" element={<ForgotPassword />} />
+        <Route path="/events" element={<Events />} />
+
         {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>
       {/* </div> */}
