@@ -16,9 +16,9 @@ const Navbar = () => {
     <nav className='border_all fixed flex z-20 top-0 right-0'>
       {/* NAV LIST */}
       {isNavOpen && (
-      <div className='w-[360px] bg-primary text-2xl px-12 py-16 lexend-medium'>
+      <div className='w-[300px] bg-primary text-2xl px-12 py-16 lexend-medium'>
         <ul className='flex flex-col gap-2'>
-          <li><Link className='list_hover'>Home</Link></li>
+          <li><Link to='/' className='list_hover'>Home</Link></li>
           <li><Link className='list_hover'>Events</Link></li>
           <li><Link className='list_hover'>Activities</Link></li>
           <li><Link className='list_hover'>Animal</Link></li>
