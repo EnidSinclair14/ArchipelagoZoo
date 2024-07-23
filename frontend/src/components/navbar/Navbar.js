@@ -21,7 +21,7 @@ const Navbar = () => {
           <li><Link to='/' className='list_hover'>Home</Link></li>
           <li><Link to='/events' className='list_hover'>Events</Link></li>
           <li><Link className='list_hover'>Activities</Link></li>
-          <li><Link className='list_hover'>Animal</Link></li>
+          <li><Link to='/animals' className='list_hover'>Animals</Link></li>
           <li><Link className='list_hover'>Eat & Drink</Link></li>
         </ul>
       </div>
@@ -44,7 +44,7 @@ const Navbar = () => {
 
           </button>
           {/* Link to buy ticket */}
-          <Link to='#' className='lexend-bold h-max w-max text-5xl  transform rotate-90 inline-block text-black'>
+          <Link to='/booking' className='lexend-bold h-max w-max text-5xl  transform rotate-90 inline-block text-black'>
             ORDER TICKET NOW
           </Link>
         </section>

@@ -1,0 +1,199 @@
+main {
+  position: relative;
+}
+
+.hero-book {
+  position: relative;
+  height: 60vh;
+  width: 100vw;
+  background: url("https://images.unsplash.com/photo-1538099130811-745e64318258?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-book .overlay-book {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content-book {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content-book h1 {
+  font-size: 4em;
+  margin: 0;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-content-book p {
+  font-size: 1.5em;
+  /* margin-top: 10px; */
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container-book {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ticket-options {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.ticket-option {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 45%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.ticket-option:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-option p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.ticket-option span {
+  font-size: 1em;
+  color: #555;
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+.price-details {
+  margin-top: 30px;
+}
+
+.price-details h2 {
+  margin-bottom: 20px;
+}
+
+.details {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.detail-summary-container {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 5px;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.detail-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-block: 10px;
+}
+
+.detail-row:last-child {
+  font-weight: bold;
+}
+
+.detail-row label {
+  flex: 1;
+}
+
+.detail-row input {
+  flex: 2;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.book-btn {
+  display: block;
+  width: 100%;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #45a049;
+}

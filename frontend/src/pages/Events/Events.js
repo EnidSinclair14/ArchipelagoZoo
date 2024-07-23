@@ -12,7 +12,7 @@ const Events = () => {
         <HeaderLogo/>
         <section class="hero-events">
           <div class="overlay"></div>
-          <div class="hero-content lexend-bold">
+          <div class="hero-content">
             <h1>Events</h1>
             <p>Join us for special events that celebrate the magic of wildlife and nature.</p>
           </div>
