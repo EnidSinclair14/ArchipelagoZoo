@@ -11,7 +11,7 @@ const Login = ({ setIsLoggedIn }) => {
     e.preventDefault();
 
     const response = await fetch('/auth/login', {
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
