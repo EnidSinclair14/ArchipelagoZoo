@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../../styles/font/lexend.css' // Font family
 import '../../styles/Navbar/navbar.css' // Navbar css
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+  const navigate = useNavigate()
 
   const [isNavOpen, setIsNavOpen] = useState(false)
 
@@ -12,19 +13,28 @@ const Navbar = () => {
     setIsNavOpen(!isNavOpen)
   }
 
+  const handleLoginButtonClick = () => {
+    navigate('/login')
+  }
+
+  const handleLogout = () => {
+    // localStorage.removeItem('access_token');
+    setIsLoggedIn(false);
+  };
+
   return (
     <nav className='border_all fixed flex z-20 top-0 right-0'>
       {/* NAV LIST */}
       {isNavOpen && (
-      <div className='w-[300px] bg-primary text-2xl px-12 py-16 lexend-medium'>
-        <ul className='flex flex-col gap-2'>
-          <li><Link to='/' className='list_hover'>Home</Link></li>
-          <li><Link to='/events' className='list_hover'>Events</Link></li>
-          <li><Link className='list_hover'>Activities</Link></li>
-          <li><Link to='/animals' className='list_hover'>Animals</Link></li>
-          <li><Link className='list_hover'>Eat & Drink</Link></li>
-        </ul>
-      </div>
+        <div className='w-[300px] bg-primary text-2xl px-12 py-16 lexend-medium'>
+          <ul className='flex flex-col gap-2'>
+            <li><Link to='/' className='list_hover'>Home</Link></li>
+            <li><Link to='/events' className='list_hover'>Events</Link></li>
+            <li><Link className='list_hover'>Activities</Link></li>
+            <li><Link to='/animals' className='list_hover'>Animals</Link></li>
+            <li><Link className='list_hover'>Eat & Drink</Link></li>
+          </ul>
+        </div>
       )}
 
       {/* NAV BAR */}
@@ -49,9 +59,15 @@ const Navbar = () => {
           </Link>
         </section>
 
-        {/* Login button */}
+        {/* BUTTONS */}
         <section className='border_top'>
-          <button className='w-20 h-20 lexend-bold login_button'>Login</button>
+          {isLoggedIn ?
+            ( // Logout button
+              <button className='w-20 h-20 lexend-bold login_button' onClick={() => handleLogout()}>Logout</button>
+            ) : ( // Login button
+              <button className='w-20 h-20 lexend-bold login_button' onClick={() => handleLoginButtonClick()}>Login</button>
+            )
+          }
         </section>
       </div>
     </nav>
