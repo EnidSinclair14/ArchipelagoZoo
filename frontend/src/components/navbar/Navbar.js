@@ -18,7 +18,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   }
 
   const handleLogout = () => {
-    // localStorage.removeItem('access_token');
     setIsLoggedIn(false);
   };
 
@@ -37,7 +36,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         </div>
       )}
 
-      {/* NAV BAR */}
+      {/* Side Navbar */}
       <div className='border_left pt-5 w-20 min-h-screen bg-primary flex flex-col justify-between'>
         {/* Top section */}
         <section className='flex flex-col items-center justify-between w-auto h-96'>

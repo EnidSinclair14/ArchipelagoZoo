@@ -2,8 +2,6 @@ from flask import Blueprint, jsonify, request
 from ..models import User
 from .. import db
 from werkzeug.security import generate_password_hash, check_password_hash # handle password hashing
-# from flask_jwt_extended import create_access_token # handle jwt token creation
-
 
 # Routes blueprint name
 auth = Blueprint('auth', __name__)
@@ -26,16 +24,12 @@ def register():
 def login():
   data = request.get_json()
   
+  print('Received login data:', data)
+
   # Memfilter data user dari tabel user
   user = User.query.filter_by(username=data['username']).first()
     
   if not user or not check_password_hash(user.password, data['password']):
     return jsonify({'message': 'Invalid username or password'}), 401
   
-  # Create a JWT token
-  # access_token = create_access_token(identity=user.id)
-  
-  response = jsonify({'message': 'Login successful'})
-  # response = jsonify({'message': 'Login successful', 'access_token': access_token})
-  response.status_code = 200
-  return response
+  return jsonify({'message': 'Login successful'}), 200 
