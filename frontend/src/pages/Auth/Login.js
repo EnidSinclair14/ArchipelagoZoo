@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = ({ setIsLoggedIn, setUser }) => {
   const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -16,8 +16,12 @@ const Login = ({ setIsLoggedIn }) => {
         username,
         password
       });
+      const { token } = response.data
+      localStorage.setItem('token', token)
+      
       setMessage(response.data.message);
       setIsLoggedIn(true)
+      setUser(username)
       navigate('/')
     } catch (error) {
       setMessage(error.response.data.message);
@@ -40,7 +44,7 @@ const Login = ({ setIsLoggedIn }) => {
             <i class="bx bxs-lock-alt"></i>
           </div>
           <div class="remember-forget">
-            <label><input type="checkbox" />Remember me</label>
+            {/* <label><input type="checkbox" />Remember me</label> */}
             <Link to="/forgot_password">forget-password?</Link>
           </div>
 

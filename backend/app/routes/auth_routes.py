@@ -33,3 +33,19 @@ def login():
     return jsonify({'message': 'Invalid username or password'}), 401
   
   return jsonify({'message': 'Login successful'}), 200 
+
+# Reset Password
+@auth.route('/forgot_password', methods=['POST'])
+def reset_password():
+    data = request.get_json()
+    username = data.get('username')
+    email = data.get('email')
+    new_password = data.get('new_password')
+
+    user = User.query.filter_by(username=username, email=email).first()
+    if not user:
+        return jsonify({'message': 'Email not found'}), 404
+
+    user.password = generate_password_hash(new_password)
+    db.session.commit()
+    return jsonify({'message': 'Password reset successful'}), 200

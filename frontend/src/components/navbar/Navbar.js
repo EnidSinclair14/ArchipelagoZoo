@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../../styles/font/lexend.css' // Font family
 import '../../styles/Navbar/navbar.css' // Navbar css
 
-const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
   const navigate = useNavigate()
 
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -18,7 +18,10 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   }
 
   const handleLogout = () => {
+    setUser('')
+    localStorage.removeItem('token');
     setIsLoggedIn(false);
+
   };
 
   return (
@@ -62,7 +65,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         <section className='border_top'>
           {isLoggedIn ?
             ( // Logout button
-              <button className='w-20 h-20 lexend-bold login_button' onClick={() => handleLogout()}>Logout</button>
+              <button className='w-20 h-20 lexend-bold login_button' onClick={() => handleLogout()}>Logout, {user}</button>
             ) : ( // Login button
               <button className='w-20 h-20 lexend-bold login_button' onClick={() => handleLoginButtonClick()}>Login</button>
             )
