@@ -17,13 +17,15 @@ def create_app():
 
     # Automaticly creating the models
     with app.app_context():
-      from .models import User
+      from .models import User, Animal
       db.create_all()
 
     # Register Blueprints
     from .routes.auth_routes import auth # auth blueprint
+    from .routes.animal_routes import animals # auth blueprint
 
     app.register_blueprint(auth, url_prefix='/auth')
+    app.register_blueprint(animals, url_prefix='/animals')
 
     return app
 
