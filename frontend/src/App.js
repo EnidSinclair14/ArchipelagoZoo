@@ -11,9 +11,9 @@ import HomePage from './pages/Home/HomePage';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import ForgotPassword from './pages/Auth/ForgotPassword';
-// import ResetPassword from './pages/Auth/ResetPassword';
 import Events from './pages/Events/Events';
 import Animals from './pages/Animals/Animals';
+import AnimalDetail from './components/animal/AnimalDetail';
 import BookTicket from './pages/BookTicket/BookTicket';
 
 function App() {
@@ -51,9 +51,9 @@ function App() {
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> } />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot_password" element={<ForgotPassword />} />
-        {/* <Route path="/reset_password" element={<ResetPassword />} /> */}
         <Route path="/events" element={<Events />} />
-        <Route path="/animals" element={<Animals />} />
+        <Route path="/animals/" element={<Animals />} />
+        <Route path="/animals/:animalName" element={<AnimalDetail />} />
         <Route path="/booking" element={<BookTicket />} />
 
         {/* <Route path="*" element={<NotFoundPage />} /> */}

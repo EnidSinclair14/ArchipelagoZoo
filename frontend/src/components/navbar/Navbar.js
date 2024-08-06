@@ -13,6 +13,10 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
     setIsNavOpen(!isNavOpen)
   }
 
+  const handleOutsideClick = () => {
+    setIsNavOpen(false)
+  }
+
   const handleLoginButtonClick = () => {
     navigate('/login')
   }
@@ -25,16 +29,21 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
   };
 
   return (
-    <nav className='border_all fixed flex z-20 top-0 right-0'>
+    <nav className='border_all fixed flex z-20 top-0 right-0 '>
+
+      {isNavOpen && (
+        <div className='w-screen' onClick={() => handleOutsideClick()}></div>
+      )}
+
       {/* NAV LIST */}
       {isNavOpen && (
-        <div className='w-[300px] bg-primary text-2xl px-12 py-16 lexend-medium'>
+        <div className='w-[300px] bg-primary text-2xl px-12 py-16 lexend-medium border-l border-l-black'>
           <ul className='flex flex-col gap-2'>
-            <li><Link to='/' className='list_hover'>Home</Link></li>
-            <li><Link to='/events' className='list_hover'>Events</Link></li>
-            <li><Link className='list_hover'>Activities</Link></li>
-            <li><Link to='/animals' className='list_hover'>Animals</Link></li>
-            <li><Link className='list_hover'>Eat & Drink</Link></li>
+            <li><Link to='/' className='list_hover' onClick={()=>handleOutsideClick()} >Home</Link></li>
+            <li><Link to='/events' className='list_hover' onClick={()=>handleOutsideClick()} >Events</Link></li>
+            <li><Link className='list_hover' onClick={()=>handleOutsideClick()} >Activities</Link></li>
+            <li><Link to='/animals' className='list_hover' onClick={()=>handleOutsideClick()} >Animals</Link></li>
+            <li><Link className='list_hover' onClick={()=>handleOutsideClick()} >Eat & Drink</Link></li>
           </ul>
         </div>
       )}
@@ -43,7 +52,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
       <div className='border_left pt-5 w-20 min-h-screen bg-primary flex flex-col justify-between'>
         {/* Top section */}
         <section className='flex flex-col items-center justify-between w-auto h-96'>
-          <button className='mb-4' onClick={handleOpen}>
+          <button className='mb-4' onClick={() => handleOpen()}>
 
             {isNavOpen ?
               (<svg width="33" height="33" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

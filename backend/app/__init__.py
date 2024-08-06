@@ -23,9 +23,11 @@ def create_app():
     # Register Blueprints
     from .routes.auth_routes import auth # auth blueprint
     from .routes.animal_routes import animals # auth blueprint
+    from .routes.events_route import events
 
     app.register_blueprint(auth, url_prefix='/auth')
     app.register_blueprint(animals, url_prefix='/animals')
+    app.register_blueprint(events, url_prefix='/events')
 
     return app
 

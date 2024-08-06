@@ -44,7 +44,8 @@ const Animals = () => {
           </nav>
           <div class="gallery">
             {animals.map((animal) => (
-              <AnimalCard key={animal.id} img_link={animal.img_link} animalName={animal.name} />
+              <AnimalCard animal={animal} />
+              // <AnimalCard key={animal.id} img_link={animal.img_link} animalName={animal.name} />
             ))}
           </div>
         </section>

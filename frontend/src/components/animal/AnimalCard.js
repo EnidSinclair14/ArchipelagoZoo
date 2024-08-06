@@ -1,14 +1,15 @@
 import React from 'react'
 import '../../styles/Animals/animals.css'
+import { Link } from 'react-router-dom'
 
-const AnimalCard = ({img_link, animalName}) => {
+const AnimalCard = ({ animal }) => {
   return (
-    <div class="gallery-item" data-category="mammals">
-      <img src={img_link} alt={animalName} />
+    <div class="gallery-item" data-category="">
+      <img src={animal.img_link} alt={animal.name} />
       <div class="animal-info">
-        <h3>{animalName}</h3>
+        <h3>{animal.name}</h3>
         {/* <p>Mammals</p> */}
-        <a href="../Detail Animals/White_Tiger.html" class="detail-link">Selengkapnya</a>
+        <Link to={`/animals/${animal.name}`} class="detail-link">Selengkapnya</Link>
       </div>
     </div>
   )

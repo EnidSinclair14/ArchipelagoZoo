@@ -1,0 +1,151 @@
+
+.main-animal-details {
+  position: relative;
+  background-color: black;
+}
+
+.hero-animal-detail {
+  position: relative;
+  width: 98.8svw;
+  max-width: 100vw;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-animal-detail .overlay-animal-detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content-animal-detail {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content-animal-detail h1 {
+  font-size: 4em;
+  margin: 0;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-content-animal-detail p {
+  font-size: 1.5em;
+  margin-top: 10px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* content */
+.content-animal-detail {
+  background-color: white;
+  display: flex;
+  padding: 15px;
+  padding-inline-end: 7svw;
+}
+
+.image-animal-detail {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.image-animal-detail img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.info-animal-detail {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-header-animal-detail {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.info-header-animal-detail div {
+  flex: 1;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.info-header-animal-detail h2 {
+  font-size: 1.2em;
+  margin: 0;
+  color: #555;
+}
+
+.info-header-animal-detail p {
+  font-size: 1em;
+  color: #333;
+  margin: 5px 0 0 0;
+}
+
+.info-content-animal-detail, .info-species-animal-detail, .info-fact-animal-detail {
+  /* margin-bottom: 20px; */
+}
+
+.info-content-animal-detail h3, .info-species-animal-detail h3 {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.info-content-animal-detail p, .info-species-animal-detail ul, .info-fact-animal-detail p {
+  font-size: 1em;
+  color: #666;
+  margin: 0;
+}
+
+.info-species-animal-detail ul {
+  list-style-type: disc;
+  margin: 5px 0 0 20px;
+}
+
+.info-fact-animal-detail {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.info-fact-animal-detail p {
+  margin: 0;
+  font-weight: bold;
+}

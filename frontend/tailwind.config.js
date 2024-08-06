@@ -4,7 +4,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
-      primary: '#EAEAEA',
+      primary: 'rgb(229,230,225)',
+      primary_second: '#EAEAEA',
       page_background: '#959595',
       white: '#fff',
       black: '#000',

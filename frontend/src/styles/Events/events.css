@@ -145,22 +145,29 @@ main {
 
 /* Event schedule styles */
 .event-schedule {
-  background-color: transparent;
+  background-color: white;
+  width: 93svw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
   padding: 40px 20px;
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 50px 50px 0 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
 }
 
 .event-schedule h2 {
-  font-size: 2.5em;
+  font-size: 3em;
   margin-bottom: 20px;
-  color: #333;
 }
 
 .event {
   display: flex;
   margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 15px;
 }
 
 .event img {
@@ -168,6 +175,7 @@ main {
   height: auto;
   border-radius: 10px;
   margin-right: 20px;
+  object-fit: cover;
 }
 
 .event-details {
@@ -176,13 +184,11 @@ main {
 
 .event-details h3 {
   font-size: 2em;
-  margin-bottom: 10px;
   color: #333;
 }
 
 .event-details p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+  font-size: 1.1em;
 }
 
 @media (max-width: 768px) {

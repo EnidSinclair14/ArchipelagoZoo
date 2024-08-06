@@ -1,15 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import HeaderLogo from '../../components/header/HeaderLogo'
 import { Footer } from '../../components/footer/Footer'
-import '../../styles/Events/events.css'
+import '../../styles/Events/events.css' // Style
 import '../../styles/font/lexend.css'
 import '../../styles/font/poppins.css'
+import axios from 'axios'
+import EventCard from '../../components/events/EventCard'
+
 
 const Events = () => {
+  const [events, setEvents] = useState([])
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:5000/events/event');
+        setEvents(response.data)
+      } catch (error) {
+        console.error("Error fetching events:", error)
+      }
+    }
+
+    fetchEvents()
+  }, [])
+
+  const eventListBgColor = ['rgb(185,178,202)', 'rgb(196,158,163)', 'rgb(166,202, 200)', 'rgb(194, 203, 161)', 'rgb(221,186, 126)', 'rgb(178,187,188)']
+
+  const getRandomBgColor = arr => arr[Math.floor(Math.random() * arr.length)];
+
+
   return (
     <div className='w-full bg-primary overflow-x-hidden'>
       <main className='pr-20'>
-        <HeaderLogo/>
+        <HeaderLogo />
         <section class="hero-events">
           <div class="overlay"></div>
           <div class="hero-content">
@@ -17,7 +40,7 @@ const Events = () => {
             <p>Join us for special events that celebrate the magic of wildlife and nature.</p>
           </div>
         </section>
-        <section class="event-calendar">
+        {/* <section class="event-calendar">
           <h2>Event Calendar</h2>
           <div class="calendar">
             <div class="calendar-header">
@@ -50,39 +73,27 @@ const Events = () => {
               </table>
             </div>
           </div>
-        </section>
-        <section class="event-schedule poppins-regular">
-          <h2>Event Schedule</h2>
-          <div class="event">
-            <img src="https://images.unsplash.com/photo-1518013895739-f7b24b50adf9?q=80&w=2304&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elephant Feeding"/>
-              <div class="event-details">
-                <h3>Elephant Feeding</h3>
-                <p>Date: July 10 2024</p>
-                <p>Time: 10:00AM - 15:00PM</p>
-                <p>The elephant feeding attraction allows visitors to interact directly with the elephants, feeding them food such as fruits and vegetables while learning about the feeding habits, behavior and conservation of these large animals from experienced guides.</p>
-              </div>
-          </div>
-          <div class="event poppins-regular">
-            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Night Safari"/>
-              <div class="event-details">
-                <h3>Night Safari</h3>
-                <p>Date: July 10 2024</p>
-                <p>Time: 17:00AM - 21:00PM</p>
-                <p>The night safari attraction takes visitors on a unique adventure in the zoo after sunset, providing the opportunity to see nocturnal animals in their natural activity with guides providing educational information along the way.</p>
-              </div>
-          </div>
-          <div class="event poppins-regular">
-            <img src="https://images.unsplash.com/photo-1594768816441-1dd241ffaa67?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Night Safari"/>
-              <div class="event-details">
-                <h3>Night Safari</h3>
-                <p>Date: July 10 2024</p>
-                <p>Time: 17:00AM - 21:00PM</p>
-                <p>The night safari attraction takes visitors on a unique adventure in the zoo after sunset, providing the opportunity to see nocturnal animals in their natural activity with guides providing educational information along the way.</p>
-              </div>
-          </div>
+        </section> */}
+
+        {/* Event section */}
+        <section class="event-schedule lexend-medium">
+          <h2 className='pb-8'>Event Schedule</h2>
+          {events.map((event) => (
+            <EventCard 
+              key={event.id}
+              event_title={event.event_name}
+              img_link={event.pict_link}
+              date_start={event.date_time}
+              date_end={event.event_date_ended}
+              description={event.event_desc}
+              bg_color={getRandomBgColor(eventListBgColor)}
+              adult_ticket={event.adult_price}
+              child_ticket={event.child_price}
+            />
+          ))}
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
