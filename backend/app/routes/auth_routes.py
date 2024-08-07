@@ -3,7 +3,7 @@ from ..models import User
 from .. import db
 from werkzeug.security import generate_password_hash, check_password_hash # handle password hashing
 
-# Routes blueprint name
+# Path = [/auth/.....]
 auth = Blueprint('auth', __name__)
 
 #  Register 
@@ -19,6 +19,7 @@ def register():
   db.session.commit()
   return jsonify({'message': 'User created successfully'}), 201
 
+
 #  Login
 @auth.route('/login', methods=['POST'])
 def login():
@@ -32,7 +33,8 @@ def login():
   if not user or not check_password_hash(user.password, data['password']):
     return jsonify({'message': 'Invalid username or password'}), 401
   
-  return jsonify({'message': 'Login successful'}), 200 
+  return jsonify({'message': 'Login successful', 'user_id': user.id}), 200 
+
 
 # Reset Password
 @auth.route('/forgot_password', methods=['POST'])

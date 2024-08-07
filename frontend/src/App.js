@@ -19,6 +19,7 @@ import BookTicket from './pages/BookTicket/BookTicket';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState('')
+  const [userId, setUserId] = useState('')
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -48,13 +49,13 @@ function App() {
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} user={user} setUser={setUser}/>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> } />
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setUser={setUser} setUserId={setUserId}/> } />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot_password" element={<ForgotPassword />} />
         <Route path="/events" element={<Events />} />
         <Route path="/animals/" element={<Animals />} />
         <Route path="/animals/:animalName" element={<AnimalDetail />} />
-        <Route path="/booking" element={<BookTicket />} />
+        <Route path="/booking" element={<BookTicket userId={userId} />} />
 
         {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>

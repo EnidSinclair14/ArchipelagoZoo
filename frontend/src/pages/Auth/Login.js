@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const Login = ({ setIsLoggedIn, setUser }) => {
+const Login = ({ setIsLoggedIn, setUser, setUserId }) => {
   const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -16,10 +16,10 @@ const Login = ({ setIsLoggedIn, setUser }) => {
         username,
         password
       });
-      const { token } = response.data
-      localStorage.setItem('token', token)
       
       setMessage(response.data.message);
+      setUserId(response.data.user_id); // get user id from backend
+
       setIsLoggedIn(true)
       setUser(username)
       navigate('/')
