@@ -75,6 +75,7 @@ const BookTicket = ({ userId }) => {
       });
 
       alert(response.data.message);
+      setSelectedTickets([])
     } catch (error) {
       console.error('Error booking tickets:', error);
       alert('Booking failed!');

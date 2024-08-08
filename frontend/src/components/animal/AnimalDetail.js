@@ -34,19 +34,19 @@ const AnimalDetail = () => {
 
   return (
     <main className='main-animal-details poppins-regular'>
-      <section class="hero-animal-detail" style={heroBackground}>
-        <div class="overlay-animal-detail"></div>
-        <div class="hero-content-animal-detail">
+      <section className="hero-animal-detail" style={heroBackground}>
+        <div className="overlay-animal-detail"></div>
+        <div className="hero-content-animal-detail">
           <h1 className='poppins-bold'>{animal.name}</h1>
         </div>
       </section>
 
-      <section class="content-animal-detail">
-        <div class="image-animal-detail">
+      <section className="content-animal-detail">
+        <div className="image-animal-detail">
           <img src={animal.img_link} alt={animal.name} />
         </div>
-        <div class="info-animal-detail">
-          <div class="info-header-animal-detail">
+        <div className="info-animal-detail">
+          <div className="info-header-animal-detail">
             <div>
               {/* animal name */}
               <h2>Name</h2>
@@ -66,7 +66,7 @@ const AnimalDetail = () => {
               <p>{animal.diets}</p>
             </div>
           </div>
-          <div class="info-content-animal-detail">
+          <div className="info-content-animal-detail">
             {/* general description */}
             <h3>General Description</h3>
             <p className='pb-5'>{animal.general_desc}</p>
@@ -82,12 +82,12 @@ const AnimalDetail = () => {
             <h3>Conservation Efforts</h3>
             <p className='pb-5'>{animal.conversation_efforts}</p>
           </div>
-          <div class="info-species-animal-detail">
+          <div className="info-species-animal-detail">
             {/* reproduction */}
             <h3>Reproduction</h3>
             <p className='pb-5'>{animal.reproduction}</p>
           </div>
-          <div class="info-fact-animal-detail">
+          <div className="info-fact-animal-detail">
             <p className='text-left'>
               <strong className='poppins-bold'>Fun Fact: <br /></strong >{animal.funfact}
             </p>

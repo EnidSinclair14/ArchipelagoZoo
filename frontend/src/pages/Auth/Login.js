@@ -31,27 +31,27 @@ const Login = ({ setIsLoggedIn, setUser, setUserId }) => {
 
   return (
     <main className='login-bg'>
-      <div class="wrapper">
+      <div className="wrapper">
         <form id="loginForm" onSubmit={handleLogin}>
           <h1>Login</h1>
-          <div class="input-box">
+          <div className="input-box">
             <input type="text" id="username" placeholder="Username" required onChange={(e) => setUsername(e.target.value)} />
-            <i class="bx bxs-user"></i>
+            <i className="bx bxs-user"></i>
           </div>
 
-          <div class="input-box">
+          <div className="input-box">
             <input type="password" id="password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
-            <i class="bx bxs-lock-alt"></i>
+            <i className="bx bxs-lock-alt"></i>
           </div>
-          <div class="remember-forget">
+          <div className="remember-forget">
             {/* <label><input type="checkbox" />Remember me</label> */}
             <Link to="/forgot_password">forget-password?</Link>
           </div>
 
           {/* Login Button */}
-          <button type="submit" class="btn">Login</button>
+          <button type="submit" className="btn">Login</button>
           
-          <div class="link">
+          <div className="link">
             <p>Don't have an account? <Link to="/register">Register</Link></p>
           </div>
         </form>

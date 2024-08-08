@@ -33,50 +33,16 @@ const Events = () => {
     <div className='w-full bg-primary overflow-x-hidden'>
       <main className='pr-20'>
         <HeaderLogo />
-        <section class="hero-events">
-          <div class="overlay"></div>
-          <div class="hero-content">
+        <section className="hero-events">
+          <div className="overlay"></div>
+          <div className="hero-content">
             <h1>Events</h1>
             <p>Join us for special events that celebrate the magic of wildlife and nature.</p>
           </div>
         </section>
-        {/* <section class="event-calendar">
-          <h2>Event Calendar</h2>
-          <div class="calendar">
-            <div class="calendar-header">
-              <span>Event Calendar</span>
-            </div>
-            <div class="calendar-body">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section> */}
 
         {/* Event section */}
-        <section class="event-schedule lexend-medium">
+        <section className="event-schedule lexend-medium">
           <h2 className='pb-8'>Event Schedule</h2>
           {events.map((event) => (
             <EventCard 

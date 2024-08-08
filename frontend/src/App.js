@@ -15,6 +15,8 @@ import Events from './pages/Events/Events';
 import Animals from './pages/Animals/Animals';
 import AnimalDetail from './components/animal/AnimalDetail';
 import BookTicket from './pages/BookTicket/BookTicket';
+import FoodAndDrink from './pages/FoodAndDrink/FoodAndDrink';
+import Activity from './pages/Activity/Activity';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -46,16 +48,18 @@ function App() {
   return (
     <Router>
       {/* <Header /> */}
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} user={user} setUser={setUser}/>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setUser={setUser} setUserId={setUserId}/> } />
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setUser={setUser} setUserId={setUserId} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot_password" element={<ForgotPassword />} />
         <Route path="/events" element={<Events />} />
         <Route path="/animals/" element={<Animals />} />
         <Route path="/animals/:animalName" element={<AnimalDetail />} />
         <Route path="/booking" element={<BookTicket userId={userId} />} />
+        <Route path="/eat_and_drink" element={<FoodAndDrink />} />
+        <Route path="/activities" element={<Activity />} />
 
         {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>

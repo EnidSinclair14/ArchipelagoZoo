@@ -10,9 +10,9 @@ const EventCard = ({ event_title, img_link, date_start, date_end, description, b
   }
 
   return (
-    <div class="event gap-3" style={styling} >
+    <div className="event gap-3" style={styling} >
       <img src={img_link} alt={event_title} className='min-w-64 max-w-64 min-h-64 max-h-64' />
-      <div class="event-details">
+      <div className="event-details">
         <h3 className='poppins-medium py-2'>{event_title}</h3>
         {/* date */}
         <p className='poppins-light flex items-center pb-2'>Date:
